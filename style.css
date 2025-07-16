@@ -1,0 +1,98 @@
+/* Style général */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: #f5f5f5;
+}
+
+/* Skip to Main Content */
+.skip-link {
+    position: absolute;
+    left: -999px;
+    top: 10px;
+    background: #0078d7;
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 4px;
+    z-index: 1000;
+    transition: left 0.3s;
+}
+.skip-link:focus {
+    left: 10px;
+}
+
+/* Navigation stylée avec Flexbox */
+.navbar {
+    background: #222;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    padding: 0.5em 0;
+}
+.navbar ul {
+    display: flex;
+    justify-content: center;
+    gap: 2em;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.navbar a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0.5em 1em;
+    border-radius: 4px;
+    transition: background 0.3s, color 0.3s;
+}
+.navbar a:hover {
+    background: #0078d7;
+    color: #fff;
+    box-shadow: 0 2px 8px rgba(0,120,215,0.2);
+}
+
+/* Images stylées avec le modèle de boîte et nth-child */
+.styled-img {
+    border: 3px solid #0078d7;
+    padding: 8px;
+    border-radius: 16px;
+    box-sizing: border-box;
+    max-width: 100%;
+    margin: 1em 0;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.styled-img:hover {
+    transform: scale(1.05) rotate(-2deg);
+    box-shadow: 0 4px 16px rgba(0,120,215,0.2);
+}
+.images img:nth-child(1) {
+    border-radius: 10px;
+}
+.images img:nth-child(2) {
+    border-radius: 30px;
+}
+.images img:nth-child(3) {
+    border-radius: 50px;
+}
+.images img:nth-child(4) {
+    border-radius: 70px;
+}
+.images img:nth-child(5) {
+    border-radius: 100px;
+}
+
+/* Galerie en grille */
+.gallery-grid .images {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1em;
+    margin: 2em 0;
+}
+
+@media (max-width: 700px) {
+    .gallery-grid .images {
+        grid-template-columns: 1fr;
+    }
+    .navbar ul {
+        flex-direction: column;
+        gap: 1em;
+    }
+}
