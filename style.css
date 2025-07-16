@@ -1,102 +1,121 @@
-/* Style général */
+/* 🌍 Style global */
+* {
+  box-sizing: border-box;
+}
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    background: #f5f5f5;
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  background-color: #f5f5f5;
+  color: #333;
 }
 
-/* Skip to Main Content */
+/* 🚀 Lien d'accessibilité "Skip to Content" */
 .skip-link {
-    position: absolute;
-    left: -999px;
-    top: 10px;
-    background: #0078d7;
-    color: #fff;
-    padding: 8px 16px;
-    border-radius: 4px;
-    z-index: 1000;
-    transition: left 0.3s;
+  position: absolute;
+  left: -999px;
+  top: 10px;
+  background-color: #0078d7;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 4px;
+  z-index: 1000;
+  transition: left 0.3s ease;
 }
 .skip-link:focus {
-    left: 10px;
+  left: 10px;
 }
 
-/* Navigation stylée avec Flexbox */
+/* 🧭 Barre de navigation stylisée avec Flex */
 .navbar {
-    background: #222;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    padding: 0.5em 0;
+  background-color: #222;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  padding: 0.5em 0;
 }
 .navbar ul {
-    display: flex;
-    justify-content: center;
-    gap: 2em;
-    list-style: none;
-    margin: 0;
-    padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 2em;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 .navbar a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: bold;
-    padding: 0.5em 1em;
-    border-radius: 4px;
-    transition: background 0.3s, color 0.3s;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 0.5em 1em;
+  border-radius: 4px;
+  transition: background 0.3s ease, color 0.3s ease;
 }
 .navbar a:hover {
-    background: #0078d7;
-    color: #fff;
-    box-shadow: 0 2px 8px rgba(0,120,215,0.2);
+  background-color: #0078d7;
+  color: #fff;
+  box-shadow: 0 2px 8px rgba(0,120,215,0.3);
 }
 
-/* Images stylées avec le modèle de boîte et nth-child */
+/* 🖼️ Style des images avec box model */
 .styled-img {
-    border: 3px solid #0078d7;
-    padding: 8px;
-    border-radius: 16px;
-    box-sizing: border-box;
-    max-width: 100%;
-    margin: 1em 0;
-    transition: transform 0.3s, box-shadow 0.3s;
+  border: 3px solid #0078d7;
+  padding: 8px;
+  border-radius: 16px;
+  max-width: 100%;
+  margin: 1em auto;
+  display: block;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 .styled-img:hover {
-    transform: scale(1.05) rotate(-2deg);
-    box-shadow: 0 4px 16px rgba(0,120,215,0.2);
+  transform: scale(1.05) rotate(-2deg);
+  box-shadow: 0 4px 16px rgba(0,120,215,0.2);
 }
+
+/* 🟰 Galerie en grille */
+.gallery-grid .images {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1em;
+  margin: 2em 0;
+}
+
+/* 🔢 nth-child sur les images */
 .images img:nth-child(1) {
-    border-radius: 10px;
+  border-radius: 10px;
 }
 .images img:nth-child(2) {
-    border-radius: 30px;
+  border-radius: 30px;
 }
 .images img:nth-child(3) {
-    border-radius: 50px;
+  border-radius: 50px;
 }
 .images img:nth-child(4) {
-    border-radius: 70px;
+  border-radius: 70px;
 }
 .images img:nth-child(5) {
-    border-radius: 100px;
+  border-radius: 100px;
 }
 
-/* Galerie en grille */
-.gallery-grid .images {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1em;
-    margin: 2em 0;
+/* 👥 Flexbox sur biographie */
+.bio {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2em;
+  align-items: center;
+  margin: 2em 0;
+}
+.bio img {
+  max-width: 250px;
 }
 
+/* 📱 Responsive Design */
 @media (max-width: 700px) {
-    .gallery-grid .images {
-        grid-template-columns: 1fr;
-    }
-    .navbar ul {
-        flex-direction: column;
-        gap: 1em;
-    }
-}
-.navbar a:focus {
-  outline: 2px solid #0078d7;
-  outline-offset: 4px;
+  .gallery-grid .images {
+    grid-template-columns: 1fr;
+  }
+  .navbar ul {
+    flex-direction: column;
+    gap: 1em;
+  }
+  .bio {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
