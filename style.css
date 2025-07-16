@@ -96,3 +96,7 @@ body {
         gap: 1em;
     }
 }
+.navbar a:focus {
+  outline: 2px solid #0078d7;
+  outline-offset: 4px;
+}
